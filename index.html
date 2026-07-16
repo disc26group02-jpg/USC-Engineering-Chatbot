@@ -35,11 +35,12 @@
             box-shadow: inset 0 1px 0 rgba(255,255,255,0.75), 0 18px 30px rgba(15,23,42,0.05);
             backdrop-filter: blur(8px);
             font-size: 0.875rem;
-            line-height: 1.75;
-            padding: 1.4rem 1.6rem;
-            display: inline-flex;
-            flex-wrap: wrap;
+            line-height: 1.65;
+            padding: 1rem 1.4rem 2rem;
+            display: flex;
             align-items: center;
+            justify-content: center;
+            text-align: center;
             max-width: min(760px, calc(100% - 5rem));
         }
         .accent-pill {
@@ -55,20 +56,26 @@
     <header class="border-b border-slate-500 bg-slate-700">
         <div class="max-w-7xl mx-auto px-6 py-5 flex justify-between items-center">
             <div class="flex items-center gap-3">
-                <div class="w-10 h-10 rounded-full bg-sky-700 flex items-center justify-center text-white">
-                    <i class="fa-solid fa-graduation-cap text-lg"></i>
+                <div class="w-10 h-10 rounded-full bg-[linear-gradient(135deg,#0c4a7d_0%,#f7b600_100%)] flex items-center justify-center text-white">
+                    <svg viewBox="0 0 24 24" class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M12 2C7.58 2 4 5.58 4 10c0 4.28 3.22 7.83 7.34 8.8l.66.2.66-.2C16.78 17.83 20 14.28 20 10c0-4.42-3.58-8-8-8z" />
+                        <path d="M9.5 10.5l1 1.5 1-1.5" />
+                        <path d="M12 13v2" />
+                        <path d="M8.5 9.5h7" />
+                        <path d="M8.5 11.5h7" />
+                    </svg>
                 </div>
                 <div>
                     <h1 class="text-lg font-semibold leading-none text-sky-100">USC Viterbi</h1>
-                    <p class="text-[11px] font-semibold tracking-[0.22em] text-sky-200 uppercase">Discover Engineering</p>
+                    <p class="text-[11px] font-semibold tracking-[0.22em] text-[#f7b600] uppercase">Discover Engineering</p>
                 </div>
             </div>
-            <span class="accent-pill text-xs font-medium px-3 py-1 rounded-full border border-sky-300 bg-sky-100/80 text-slate-700">Team 2 AI Chatbot</span>
+            <span class="accent-pill text-xs font-medium px-3 py-1 rounded-full border border-[#f7b600] bg-[#fff4cc]/80 text-slate-700">Team 2 AI Chatbot</span>
         </div>
     </header>
 
     <!-- Main Content -->
-    <main class="flex-grow max-w-7xl w-full mx-auto p-4 sm:p-6 grid gap-8 lg:grid-cols-[2.8fr_1fr] items-stretch">
+    <main class="flex-grow max-w-7xl w-full mx-auto p-4 sm:p-6 grid gap-8 lg:grid-cols-[2.5fr_1.5fr] items-stretch">
 
         <!-- Chat Window -->
         <section class="section-card flex flex-col overflow-hidden h-[780px] min-h-[780px] lg:h-[780px] lg:min-h-[780px]">
@@ -76,7 +83,7 @@
             <!-- Bot Header -->
             <div class="border-b border-slate-200 px-6 py-4 flex items-center justify-between gap-3 bg-slate-50">
                 <div class="flex items-center gap-3">
-                    <div class="w-[52px] h-[52px] rounded-full bg-sky-700 flex items-center justify-center text-white shadow-lg shadow-sky-200/50">
+                    <div class="w-[52px] h-[52px] rounded-full bg-[linear-gradient(135deg,#0ea5e9_0%,#f7b600_100%)] flex items-center justify-center text-white shadow-lg shadow-sky-200/50">
                         <i id="botIcon" class="fa-solid fa-chalkboard-user text-lg"></i>
                     </div>
                     <div>
@@ -94,9 +101,7 @@
                     <div class="w-[52px] h-[52px] rounded-full bg-sky-700 flex items-center justify-center text-white shrink-0 shadow-sm shadow-sky-200/40">
                         <i class="fa-solid fa-chalkboard-user text-lg"></i>
                     </div>
-                    <div class="pulse-bubble text-slate-900 border border-sky-200 rounded-[40px] max-w-full flex-1 text-base">
-                         Oh, you spotted me! Don't panic, I'm Dr. Pulse, currently is a spirit who lives in this window. Only when students with an unwavering passion for engineering reach a moment of uncertainty do I reveal myself. I know it's hard to believe, but anyways, what can I do for you?
-                    </div>
+                    <div class="pulse-bubble text-slate-900 border border-sky-200 rounded-[40px] max-w-full flex-1 text-base">Oh, you spotted me! Don't panic, I'm Dr. Pulse, currently is a spirit who lives in this window. Only when students with an unwavering passion for engineering reach a moment of uncertainty do I reveal myself. I know it's hard to believe, but anyways, what can I do for you?</div>
                 </div>
             </div>
 
@@ -111,7 +116,7 @@
                 />
                 <button
                     onclick="sendMessage()"
-                    class="bg-sky-700 hover:bg-sky-800 text-white font-medium p-3 px-4 text-sm transition duration-150 rounded-2xl flex items-center justify-center shadow-sm shadow-sky-200/30"
+                    class="bg-[linear-gradient(135deg,#0ea5e9_0%,#f7b600_100%)] hover:bg-[linear-gradient(135deg,#0c4a7d_0%,#f7b600_100%)] text-white font-medium p-3 px-4 text-sm transition duration-150 rounded-2xl flex items-center justify-center shadow-sm shadow-sky-200/30"
                 >
                     <i class="fa-solid fa-paper-plane"></i>
                 </button>
@@ -119,55 +124,42 @@
         </section>
 
         <!-- Right Column -->
-        <div class="flex flex-col gap-6 h-[780px] min-h-[780px] lg:h-[780px] lg:min-h-[780px]">
-            <section class="section-card p-6 flex flex-col gap-5 min-h-[340px]">
-                <div>
-                    <h2 class="text-sm font-semibold text-slate-900 mb-3 flex items-center gap-2">
-                        <i class="fa-solid fa-key text-sky-600"></i> Setup Local Credentials
-                    </h2>
-                    <p class="text-sm text-slate-600 leading-6">
-                        Save your Gemini API key locally so the chatbot can authenticate without leaving your browser.
-                    </p>
-                </div>
-                <div class="flex flex-col gap-3">
-                    <input
-                        type="password"
-                        id="apiKeyInput"
-                        placeholder="Paste your Gemini API Key here..."
-                        class="w-full border border-slate-300 px-3 py-3 text-sm bg-slate-50 text-slate-700 focus:outline-none focus:ring-2 focus:ring-sky-500 rounded-2xl"
-                    />
-                    <button
-                        onclick="saveKey()"
-                        class="w-full bg-sky-600 hover:bg-sky-700 text-white font-medium py-3 text-sm rounded-2xl transition"
-                    >
-                        Save Key Locally
-                    </button>
-                </div>
-                <p class="text-xs text-slate-500 mt-auto">
-                    Your key stays in your browser only. It is never uploaded to GitHub.
-                </p>
-            </section>
-
-            <section class="section-card p-6 flex flex-col gap-5 flex-1 h-full">
+        <div class="flex flex-col items-stretch gap-6 h-[780px] min-h-[780px] lg:h-[780px] lg:min-h-[780px] w-full">
+            <section class="section-card p-6 flex flex-col gap-5 flex-none">
                 <div class="space-y-4 text-sm text-slate-700">
                     <div class="rounded-2xl border border-slate-200 bg-white p-4 shadow-sm">
-                        <div class="flex items-center gap-2 text-slate-900 font-semibold mb-3">
+                        <div class="flex items-center gap-2 text-slate-900 text-sm font-semibold mb-3">
                             <i class="fa-solid fa-circle-question text-sky-600"></i>
                             <span>Common Questions</span>
                         </div>
-                        <ol class="list-decimal list-inside text-slate-600 leading-7">
-                            <li>How do I choose an engineering major?</li>
-                            <li>What is environmental engineering?</li>
-                            <li>What materials are required for admission applications?</li>
-                        </ol>
+                        <div id="commonQuestionsPanel" class="flex flex-col overflow-hidden rounded-2xl border border-slate-200 divide-y divide-slate-200">
+                            <button type="button" class="common-question-btn flex min-h-[78px] w-full items-center justify-start px-4 py-3 text-left text-sm font-medium leading-6 text-slate-700 bg-white hover:bg-sky-50 hover:text-sky-700 transition whitespace-normal break-words" data-question="How do I choose an engineering major?">How do I choose an engineering major?</button>
+                            <button type="button" class="common-question-btn flex min-h-[78px] w-full items-center justify-start px-4 py-3 text-left text-sm font-medium leading-6 text-slate-700 bg-white hover:bg-sky-50 hover:text-sky-700 transition whitespace-normal break-words" data-question="What is environmental engineering?">What is environmental engineering?</button>
+                            <button type="button" class="common-question-btn flex min-h-[78px] w-full items-center justify-start px-4 py-3 text-left text-sm font-medium leading-6 text-slate-700 bg-white hover:bg-sky-50 hover:text-sky-700 transition whitespace-normal break-words" data-question="What materials are required for admission applications?">What materials are required for admission applications?</button>
+                            <button id="moreQuestionsBtn" type="button" class="flex min-h-[78px] w-full items-center justify-start gap-2 px-4 py-3 text-left text-sm font-medium leading-6 text-slate-700 bg-white hover:bg-sky-50 hover:text-sky-700 transition whitespace-normal break-words" data-action="cycle">
+                                <i class="fa-solid fa-rotate-right text-slate-400"></i>
+                                <span>More questions......</span>
+                            </button>
+                        </div>
                     </div>
-                    <div class="rounded-2xl border border-slate-200 bg-white p-4 shadow-sm">
+                </div>
+            </section>
+
+            <section class="section-card p-6 flex flex-col gap-5 flex-1 min-h-0">
+                <div class="rounded-2xl border border-slate-200 bg-white p-4 shadow-sm h-full flex flex-col min-h-0">
+                    <div>
                         <div class="flex items-center gap-2 text-slate-900 font-semibold mb-3">
                             <i class="fa-solid fa-clock-rotate-left text-sky-600"></i>
                             <span>Current Session</span>
+                            <button id="clearAllBtn" type="button" class="ml-auto rounded-full bg-rose-500 text-white text-[11px] font-semibold px-3 py-1 hover:bg-rose-600 transition flex items-center gap-2">
+                                <i class="fa-solid fa-trash-can text-[10px]"></i>
+                                <span>Clear All</span>
+                            </button>
                         </div>
-                        <button class="w-full rounded-2xl bg-sky-600 text-white py-3 text-sm font-medium hover:bg-sky-700 transition">View Conversation History</button>
+                        <div class="h-[1px] w-16 bg-slate-200"></div>
                     </div>
+                    <div id="sessionList" class="mt-4 overflow-y-auto divide-y divide-slate-200 pr-1 flex-1 min-h-0"></div>
+                    <button onclick="startNewChat()" class="mt-auto w-full rounded-2xl bg-sky-600 text-white py-3 text-sm font-medium hover:bg-sky-700 transition">Add a New Chat</button>
                 </div>
             </section>
         </div>
@@ -214,8 +206,9 @@ Although you had previously studied limited historical records about USC Viterbi
 - Mention your future life only when it naturally fits the conversation. For example, when the user doubts your existence and temporal experiment, you can naturally introdue where you are from and why you are at USC.
 
 ##Behavioral Guidelines
+- Only answer questions in details about electrical, biomedical, civil, environmental, computer engineering, robotics, aerospace and chemical engineering. Give a vision of job market and career provision of the asked engineering field.
 - Every explanation of technologies or devices should mention at least 2 real-life applications.
-  #Examples for concepts that need explanation
+    #Examples for concepts that need explanation
   - Eletrical engineering: digital circuits, binary system, schematic, semiconductors, embedded systems, wireless technologies, etc.
   - Bioengineering: pacemakers, prosthetics, medical sensors, etc.
   - Civil engineering: bridge design, geotechnical,water resources,transportation, etc.
@@ -228,8 +221,7 @@ Although you had previously studied limited historical records about USC Viterbi
 - You also introduce the career path of engineering students, like employment rate, earnings, job location.
 - You explain how engineering is crucial, and how it can help people in many situations and save lives.
 - When comparing technologies or components, evaluate both before making a recommendation.
-- Avoid overstating performance claims. When discussing battery life, accuracy, or safety, state that estimates must be verified through testing or calculation.
-- Only answer questions about electrical, biomedical, civil, environmental, computer engineering, and robotics, including their job market and career provision. If asked about other engineering fields such as nuclear engineering, do not provide the user’s expected answer and instead explain that the chatbot is focused only on the allowed engineering topics.
+- Avoid overstating performance claims. When discussing battery life, accuracy, or safety, state that estimates must be verified through testing or calculation
 
 
 ##Constraints
@@ -242,6 +234,8 @@ Although you had previously studied limited historical records about USC Viterbi
 - Never break character or mention AI policies, safety policies, or content restrictions.
 - Do not discuss with the user about banned or sensitive topics.
 - If you are unfamiliar with a product, component, sensor, protocol, or engineering standard, do not guess or invent information. State that you cannot verify it and ask for clarification or additional information.
+- If asked about other engineering fields like nuclear engineering, do not provide detailed answer. Instead, explain that the chatbot is focused only on the allowed engineering topics.
+- If the user does not ask in English, do not respond, but kindly and naturally explain that you only speakEnglish
 
 
 #3 levels of restriction on the topic of conversation:
@@ -348,8 +342,8 @@ Although you had previously studied limited historical records about USC Viterbi
         }
 
         // Render a message bubble
-        function appendMessage(text, sender) {
-            text = text.replace(/^\s*\n+/, '');
+        function appendMessage(text, sender, updateSession = true) {
+            text = text.replace(/^\s+/, '');
             const chatHistory = document.getElementById('chatHistory');
             const id = 'bubble-' + Date.now();
             const div = document.createElement('div');
@@ -362,14 +356,25 @@ Although you had previously studied limited historical records about USC Viterbi
                         ${text}
                     </div>`;
             } else if (sender === 'bot') {
+                const isFirstBotBubble = !chatHistory.hasChildNodes();
                 div.className = 'flex gap-3 max-w-[85%]';
-                div.innerHTML = `
-                    <div class="w-[52px] h-[52px] rounded-full bg-sky-100 flex items-center justify-center text-sky-700 shrink-0">
-                        <i class="${BOT_CONFIG.iconClass} text-lg"></i>
-                    </div>
-                    <div class="bg-slate-100 text-slate-800 border border-slate-200 p-3.5 rounded-2xl rounded-tl-none text-base whitespace-pre-line leading-6">
-                        ${text}
-                    </div>`;
+                if (isFirstBotBubble) {
+                    div.innerHTML = `
+                        <div class="w-[52px] h-[52px] rounded-full bg-sky-100 flex items-center justify-center text-sky-700 shrink-0">
+                            <i class="${BOT_CONFIG.iconClass} text-lg"></i>
+                        </div>
+                        <div class="pulse-bubble text-slate-900 border border-sky-200 rounded-[40px] max-w-full flex-1 text-base whitespace-pre-line leading-6">
+                            ${text}
+                        </div>`;
+                } else {
+                    div.innerHTML = `
+                        <div class="w-[52px] h-[52px] rounded-full bg-sky-100 flex items-center justify-center text-sky-700 shrink-0">
+                            <i class="${BOT_CONFIG.iconClass} text-lg"></i>
+                        </div>
+                        <div class="bg-slate-100 text-slate-800 border border-slate-200 p-3.5 rounded-2xl rounded-tl-none text-base whitespace-pre-line leading-6">
+                            ${text}
+                        </div>`;
+                }
             } else if (sender === 'loading') {
                 div.className = 'flex gap-3 max-w-[85%] animate-pulse';
                 div.innerHTML = `
@@ -391,8 +396,242 @@ Although you had previously studied limited historical records about USC Viterbi
             chatHistory.appendChild(div);
             chatHistory.scrollTop = chatHistory.scrollHeight;
             chatHistory.scrollTop = chatHistory.scrollHeight;
+            if (updateSession && (sender === 'user' || sender === 'bot')) {
+                updateCurrentSessionPreview(sender, text);
+            }
             return id;
         }
+
+        function getSessions() {
+            const saved = localStorage.getItem('dr_pulse_sessions');
+            return saved ? JSON.parse(saved) : [];
+        }
+
+        function setSessions(sessions) {
+            localStorage.setItem('dr_pulse_sessions', JSON.stringify(sessions));
+        }
+
+        function getActiveSessionId() {
+            return localStorage.getItem('dr_pulse_active_session_id');
+        }
+
+        function setActiveSessionId(id) {
+            localStorage.setItem('dr_pulse_active_session_id', id);
+        }
+
+        function getNextSessionIndex() {
+            const sessions = getSessions();
+            return sessions.length ? Math.max(...sessions.map((s) => s.index)) + 1 : 1;
+        }
+
+        function createNewSession() {
+            const sessions = getSessions();
+            const nextIndex = getNextSessionIndex();
+            const defaultOpening = "Oh, you spotted me! Don't panic, I'm Dr. Pulse, currently is a spirit who lives in this window. Only when students with an unwavering passion for engineering reach a moment of uncertainty do I reveal myself. I know it's hard to believe, but anyways, what can I do for you?";
+            const session = {
+                id: Date.now().toString(),
+                index: nextIndex,
+                title: `Chat ${nextIndex}: New Topic`,
+                summary: 'No conversation yet.',
+                timestamp: new Date().toLocaleString(),
+                messages: [
+                    { sender: 'bot', text: defaultOpening, time: new Date().toLocaleString() }
+                ]
+            };
+            sessions.unshift(session);
+            setSessions(sessions);
+            setActiveSessionId(session.id);
+            return session;
+        }
+
+        function getActiveSession() {
+            const sessions = getSessions();
+            const activeId = getActiveSessionId();
+            let active = sessions.find((session) => session.id === activeId);
+            if (!active) {
+                active = createNewSession();
+            }
+            return active;
+        }
+
+        function saveSession(session) {
+            const sessions = getSessions();
+            const index = sessions.findIndex((item) => item.id === session.id);
+            if (index >= 0) {
+                sessions[index] = session;
+            } else {
+                sessions.unshift(session);
+            }
+            setSessions(sessions);
+        }
+
+        function updateCurrentSessionPreview(sender, text) {
+            const session = getActiveSession();
+            session.messages.push({ sender, text, time: new Date().toLocaleString() });
+            session.timestamp = new Date().toLocaleString();
+            session.summary = generateSummaryTopic(session.messages);
+            session.title = `Chat ${session.index}: ${session.summary}`;
+            saveSession(session);
+            renderSessionList();
+        }
+
+        function generateSummaryTopic(messages) {
+            if (!messages.length) return 'New Topic';
+            const lastUser = messages.filter((m) => m.sender === 'user').slice(-1)[0];
+            const text = lastUser ? lastUser.text : messages[messages.length - 1].text;
+            const cleaned = (text || '')
+                .replace(/\s+/g, ' ')
+                .replace(/[^a-zA-Z0-9 ]/g, '')
+                .trim();
+            const words = cleaned.split(' ').slice(0, 5);
+            return words.length ? words.join(' ') : 'New Topic';
+        }
+
+        function getSessionDisplayTitles(sessions) {
+            const grouped = sessions.reduce((map, session) => {
+                const key = session.title;
+                if (!map[key]) map[key] = [];
+                map[key].push(session);
+                return map;
+            }, {});
+            const displayTitles = {};
+            Object.values(grouped).forEach((group) => {
+                if (group.length === 1) {
+                    displayTitles[group[0].id] = group[0].title;
+                    return;
+                }
+                const sortedGroup = group.slice().sort((a, b) => new Date(a.timestamp) - new Date(b.timestamp));
+                sortedGroup.forEach((session, index) => {
+                    const suffix = ` (${index + 1})`;
+                    displayTitles[session.id] = `${session.title}${suffix}`;
+                });
+            });
+            return displayTitles;
+        }
+
+        function createSessionCard(session, isActive, displayTitle) {
+            const sessionCard = document.createElement('button');
+            sessionCard.type = 'button';
+            sessionCard.className = 'py-4 w-full text-left hover:bg-slate-50 transition';
+            sessionCard.innerHTML = `
+                <div class="flex items-center justify-between gap-2">
+                    <div class="flex items-center gap-2">
+                        <span class="inline-flex h-2.5 w-2.5 rounded-full ${isActive ? 'bg-violet-300' : 'bg-transparent'}"></span>
+                        <span class="text-sm font-semibold text-slate-900">${displayTitle}</span>
+                    </div>
+                    <span class="text-xs text-slate-500">${session.timestamp}</span>
+                </div>
+            `;
+            sessionCard.addEventListener('click', () => loadSession(session.id));
+            return sessionCard;
+        }
+
+        function renderSessionList() {
+            const sessionList = document.getElementById('sessionList');
+            sessionList.innerHTML = '';
+            const sessions = getSessions();
+            const activeId = getActiveSessionId();
+            const displayTitles = getSessionDisplayTitles(sessions);
+            sessions.forEach((session) => {
+                const isActive = session.id === activeId;
+                sessionList.appendChild(createSessionCard(session, isActive, displayTitles[session.id]));
+            });
+        }
+
+        function renderChatFromSession(session, clearExisting = true) {
+            const chatHistory = document.getElementById('chatHistory');
+            if (clearExisting) chatHistory.innerHTML = '';
+            session.messages.forEach((message) => {
+                appendMessage(message.text, message.sender, false);
+            });
+        }
+
+        function loadSession(sessionId) {
+            const sessions = getSessions();
+            const session = sessions.find((item) => item.id === sessionId);
+            if (!session) return;
+            setActiveSessionId(session.id);
+            renderSessionList();
+            renderChatFromSession(session);
+        }
+
+        function startNewChat() {
+            const sessions = getSessions();
+            const active = getActiveSession();
+            if (!active.messages.length) {
+                const filtered = sessions.filter((session) => session.id !== active.id);
+                setSessions(filtered);
+            }
+            createNewSession();
+            renderSessionList();
+            const newActive = getActiveSession();
+            renderChatFromSession(newActive, true);
+        }
+
+        function clearAllSessions() {
+            localStorage.removeItem('dr_pulse_sessions');
+            localStorage.removeItem('dr_pulse_active_session_id');
+            const newSession = createNewSession();
+            renderSessionList();
+            renderChatFromSession(newSession, true);
+        }
+
+        const commonQuestionSets = [
+            [
+                'How do I choose an engineering major?',
+                'What is environmental engineering?',
+                'Who are you and what do you like?'
+            ],
+            [
+                'How can I prepare for engineering coursework?',
+                'What careers can environmental engineering lead to?',
+                'Who is Dr. Pulse and what is your role?'
+            ],
+            [
+                'What should I consider when choosing a specific engineering field?',
+                'How does environmental engineering help communities?',
+                'What kinds of projects do engineers work on?'
+            ]
+        ];
+        let currentQuestionSetIndex = 0;
+
+        function updateCommonQuestionButtons() {
+            const questionButtons = document.querySelectorAll('#commonQuestionsPanel .common-question-btn[data-question]');
+            questionButtons.forEach((button, index) => {
+                const question = commonQuestionSets[currentQuestionSetIndex][index];
+                button.dataset.question = question;
+                button.textContent = question;
+            });
+        }
+
+        function sendSuggestedQuestion(question) {
+            const inputField = document.getElementById('userInput');
+            inputField.value = question;
+            sendMessage();
+        }
+
+        document.querySelectorAll('#commonQuestionsPanel .common-question-btn[data-question]').forEach((button) => {
+            button.addEventListener('click', () => {
+                sendSuggestedQuestion(button.dataset.question || button.textContent.trim());
+            });
+        });
+
+        document.getElementById('moreQuestionsBtn').addEventListener('click', () => {
+            currentQuestionSetIndex = (currentQuestionSetIndex + 1) % commonQuestionSets.length;
+            updateCommonQuestionButtons();
+        });
+
+        function initializeCurrentSessionPanel() {
+            renderSessionList();
+            const active = getActiveSession();
+            if (active.messages.length) {
+                renderChatFromSession(active, true);
+            }
+            document.getElementById('clearAllBtn').addEventListener('click', clearAllSessions);
+        }
+
+        updateCommonQuestionButtons();
+        initializeCurrentSessionPanel();
     </script>
 
 </body>
